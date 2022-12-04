@@ -15,6 +15,9 @@ import org.slf4j.Logger;
 @RequestMapping("/api/v1/get-api")
 public class GetController {
 
+    /** Notes
+     *  import가 java.util.logger.LOGGER가 아닌 org.slf4j.Logger; 이다
+     * */
     private final Logger LOGGER = (Logger) LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
