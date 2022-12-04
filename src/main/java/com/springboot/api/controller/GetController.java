@@ -15,9 +15,10 @@ import org.slf4j.Logger;
 @RequestMapping("/api/v1/get-api")
 public class GetController {
 
-    /** Notes
-     *  import가 java.util.logger.LOGGER가 아닌 org.slf4j.Logger; 이다
-     * */
+    /**
+     * Notes
+     * import가 java.util.logger.LOGGER가 아닌 org.slf4j.Logger; 이다
+     */
     private final Logger LOGGER = (Logger) LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
@@ -33,6 +34,7 @@ public class GetController {
 
     @GetMapping(value = "/variable1/{variable}")
     public String getVariable(@PathVariable String variable) {
+        LOGGER.info("@PathVariable을 통해 들어온 값: {}", variable);
         return variable;
     }
 
