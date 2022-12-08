@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  db:
+    image: mariadb:10
+    ports:
+      - 9801:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+      MARIADB_DATABASE: springboot
+    restart: always
+    platform: linux/amd64 # Mac에서 사용 시

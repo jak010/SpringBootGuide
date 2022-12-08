@@ -29,7 +29,7 @@ public class GetController {
 
     @GetMapping(value = "/name")
     public String getName() {
-        return "Flatur3";
+        return "Flatur4";
     }
 
     @GetMapping(value = "/variable1/{variable}")
