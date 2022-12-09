@@ -5,8 +5,11 @@ import com.springboot.api.dto.ProductDto;
 import com.springboot.api.dto.ProductResponseDto;
 import com.springboot.api.entity.Product;
 import com.springboot.api.service.ProductService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -34,10 +37,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductResponseDto saveProduct(ProductDto productDto) {
         Product product = new Product();
-        product.setNumber(product.getNumber());
-        product.setName(product.getName());
-        product.setPrice(product.getPrice());
-        product.setStock(product.getStock());
+        product.setName(productDto.getName());
+        product.setPrice(productDto.getPrice());
+        product.setStock(productDto.getStock());
+        product.setCreateAt(LocalDateTime.now());
+        product.setUpdateAt(LocalDateTime.now());
 
         Product savedProduct = productDAO.insertProduct(product);
 
